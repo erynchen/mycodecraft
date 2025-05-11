@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Code Craft - Personalized Coding Coaching</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Green color scheme */
+        :root {
+            --primary-color: #2a9d8f;
+            --secondary-color: #1d6a60;
+            --accent-color: #4CAF50;
+            --light-color: #e9faf8;
+            --dark-color: #264653;
+            --background-color: #f1f8e9;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--light-color);
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Features section */
+        .features {
+            padding: 4rem 0;
+            background-color: var(--background-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        /* Programs section */
+        .programs {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .program-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .program-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .program-content {
+            padding: 1.5rem;
+        }
+        
+        .program-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .program-details {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        
+        .program-detail {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+            color: #666;
+        }
+        
+        .program-icon {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            opacity: 0.1;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-info h4 {
+            margin-bottom: 0.25rem;
+            color: var(--dark-color);
+        }
+        
+        .testimonial-info p {
+            color: #666;
+        }
+        
+        /* About section */
+        .about {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        /* Contact section */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info h3, 
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info-list {
+            list-style: none;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--light-color);
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Media queries */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">My <span>Code</span> Craft</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Personalized Coding Coaching</h1>
+            <p>Where Learning is Tailored to YOU! Discover coding through one-on-one instruction with robotics and Python programming.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>The CodeCraft Difference</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Personalized Assessment</h3>
+                    <p>We begin with a comprehensive evaluation of your learning style, interests, and goals. No two students learn the same way.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Custom Project Development</h3>
+                    <p>Based on your assessment, we create projects specifically designed for your interests and learning style using robotics and Python programming.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>One-on-One Attention</h3>
+                    <p>Every session is private, allowing us to adapt and adjust our teaching approach in real-time as you learn and grow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Your Pace, Your Path</h3>
+                    <p>No rushing through material or waiting for others. Your learning journey advances at exactly the right speed for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Programs</h2>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="program-content">
+                        <h3>Kids Beginner (Ages 5-9)</h3>
+                        <div class="program-details">
+                            <div class="program-detail">
+                                <span class="program-icon">⏱️</span>
+                                <span>10 sessions</span>
+                            </div>
+                            <div class="program-detail">
+                                <span class="program-icon">🤖</span>
+                                <span>Interactive robotics</span>
+                            </div>
+                        </div>
+                        <p>Build creativity and problem-solving skills through interactive robotics projects. Perfect for young beginners taking their first steps into coding.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="program-content">
+                        <h3>Kids Intermediate (Ages 8-13)</h3>
+                        <div class="program-details">
+                            <div class="program-detail">
+                                <span class="program-icon">⏱️</span>
+                                <span>10 sessions</span>
+                            </div>
+                            <div class="program-detail">
+                                <span class="program-icon">🤖</span>
+                                <span>Robotics & Python</span>
+                            </div>
+                        </div>
+                        <p>Advance from block-based to text-based programming with robot challenges and simple Python programs. Take your coding skills to the next level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="/api/placeholder/600/400" alt="Coding instruction with student">
+                </div>
+                <div class="about-content">
+                    <h2>About My Code Craft</h2>
+                    <p>We're a personalized coding education business based in Ajax, Ontario, dedicated to providing one-on-one instruction to children (ages 5-13). Our approach is based on comprehensive personalized assessment, tailored projects, and individual attention.</p>
+                    <ul class="about-list">
+                        <li>Customized learning plans based on individual assessment</li>
+                        <li>Project-based curriculum using robotics and Python</li>
+                        <li>One-on-one instruction focused on your specific needs</li>
+                        <li>Flexible scheduling with sessions at Ajax community centers</li>
+                        <li>Inclusive approach welcoming students of all ability levels</li>
+                    </ul>
+                    <p>Our mission is to empower young minds through engaging, accessible, and personalized coding education. We offer affordable pricing at <strong>$45 per session</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info-list">
+                        <li class="contact-info-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <p>Ajax, Ontario, Canada</p>
+                            </div>
+                        </li>
+                        <li class="contact-info-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <p>(905) XXX-XXXX</p>
+                            </div>
+                        </li>
+                        <li class="contact-info-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <p>info@codecraftacademy.ca</p>
+                            </div>
+                        </li>
+                        <li class="contact-info-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-text">
+                                <p>Session hours: Weekdays 3:30 PM - 7:30 PM<br>Weekends 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h3>Schedule a Free Consultation</h3>
+                    <p>Interested in learning more? Contact us to schedule a free initial consultation and assessment to discover how our personalized approach can help your child develop valuable coding skills.</p>
+                    <p>Email us at <strong>info@mycodecraft.com</strong> or call <strong>(905) XXX-XXXX</strong> to get started!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">My <span>Code</span> Craft</div>
+            <div class="copyright">
+                &copy; 2025 My Code Craft. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
