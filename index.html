@@ -262,23 +262,9 @@
             background-color: white;
         }
         
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-img {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .about-content h2 {
@@ -387,10 +373,6 @@
         
         /* Media queries */
         @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -496,22 +478,17 @@
     <!-- About Section -->
     <section class="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-img">
-                    <img src="/api/placeholder/600/400" alt="Coding instruction with student">
-                </div>
-                <div class="about-content">
-                    <h2>About My Code Craft</h2>
-                    <p>We're a personalized coding education business based in Ajax, Ontario, dedicated to providing one-on-one instruction to children (ages 5-13). Our approach is based on comprehensive personalized assessment, tailored projects, and individual attention.</p>
-                    <ul class="about-list">
-                        <li>Customized learning plans based on individual assessment</li>
-                        <li>Project-based curriculum using robotics and Python</li>
-                        <li>One-on-one instruction focused on your specific needs</li>
-                        <li>Flexible scheduling with sessions at Ajax community centers</li>
-                        <li>Inclusive approach welcoming students of all ability levels</li>
-                    </ul>
-                    <p>Our mission is to empower young minds through engaging, accessible, and personalized coding education. We offer affordable pricing at <strong>$45 per session</strong>.</p>
-                </div>
+            <div class="about-content">
+                <h2>About My Code Craft</h2>
+                <p>We're a personalized coding education business based in Ajax, Ontario, dedicated to providing one-on-one instruction to children (ages 5-13). Our approach is based on comprehensive personalized assessment, tailored projects, and individual attention.</p>
+                <ul class="about-list">
+                    <li>Customized learning plans based on individual assessment</li>
+                    <li>Project-based curriculum using robotics and Python</li>
+                    <li>One-on-one instruction focused on your specific needs</li>
+                    <li>Flexible scheduling with sessions at Ajax community centers</li>
+                    <li>Inclusive approach welcoming students of all ability levels</li>
+                </ul>
+                <p>Our mission is to empower young minds through engaging, accessible, and personalized coding education. We offer affordable pricing at <strong>$45 per session</strong>.</p>
             </div>
         </div>
     </section>
@@ -549,7 +526,7 @@
                 <div class="contact-form">
                     <h3>Schedule a Free Consultation</h3>
                     <p>Interested in learning more? Contact us to schedule a free initial consultation and assessment to discover how our personalized approach can help your child develop valuable coding skills.</p>
-                    <p>Email us at <strong>eryn@mycodecraft.com<</strong> to get started!</p>
+                    <p>Email us at <strong>eryn@mycodecraft.com</strong> to get started!</p>
                 </div>
             </div>
         </div>
