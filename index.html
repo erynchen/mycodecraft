@@ -524,9 +524,50 @@
                     </ul>
                 </div>
                 <div class="contact-form">
-                    <h3>Schedule a Free Consultation</h3>
-                    <p>Interested in learning more? Contact us to schedule a free initial consultation and assessment to discover how our personalized approach can help your child develop valuable coding skills.</p>
-                    <p>Email us at <strong>eryn@mycodecraft.com</strong> to get started!</p>
+                    <h3>Schedule a Free Assessment</h3>
+                    <form action="https://formspree.io/f/your-formspree-id" method="POST">
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Parent's Name:</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="phone" style="display: block; margin-bottom: 5px; font-weight: bold;">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="childAge" style="display: block; margin-bottom: 5px; font-weight: bold;">Child's Age:</label>
+                            <input type="number" id="childAge" name="childAge" min="5" max="13" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="experience" style="display: block; margin-bottom: 5px; font-weight: bold;">Previous Coding Experience:</label>
+                            <select id="experience" name="experience" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                                <option value="none">None</option>
+                                <option value="little">A little</option>
+                                <option value="some">Some experience</option>
+                                <option value="experienced">Experienced</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Any specific interests or questions?</label>
+                            <textarea id="message" name="message" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="contact-time" style="display: block; margin-bottom: 5px; font-weight: bold;">Best time to contact you:</label>
+                            <input type="text" id="contact-time" name="contact-time" placeholder="e.g., Weekday evenings, Weekend mornings" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        
+                        <button type="submit" style="background-color: #2a9d8f; color: white; border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-weight: bold;">Schedule Assessment</button>
+                    </form>
                 </div>
             </div>
         </div>
